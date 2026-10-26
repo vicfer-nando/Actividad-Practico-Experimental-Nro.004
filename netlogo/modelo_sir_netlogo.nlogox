@@ -83,15 +83,21 @@ end
 ; EJECUTAR LA SIMULACION
 ; ==========================================
 
+
+; ==========================================
+; EJECUTAR LA SIMULACION
+; MISMA LOGICA DE CONTACTOS QUE JAVA
+; ==========================================
+
 to ejecutar
 
-  ; Comprobar si la simulacion esta inicializada
+  ; Verificar que la simulacion este inicializada
   if not is-list? datos-netlogo [
     user-message "Primero pulsa REPETIR SIMULACION."
     stop
   ]
 
-  if length datos-netlogo < 2 [
+  if empty? datos-netlogo [
     user-message "Primero pulsa REPETIR SIMULACION."
     stop
   ]
@@ -99,48 +105,54 @@ to ejecutar
   ; Detener al llegar a 100 ticks
   if ticks >= 100 [ stop ]
 
-  ; Mover personas aleatoriamente
+  ; Mover las personas visualmente
   ask turtles [
     rt (random 61 - random 61)
     fd 0.45
   ]
 
-  ; Calcular probabilidad de contagio
-  let infectados count turtles with [estado = "I"]
-  let prob-contagio beta * infectados / 100
-
-  ; Copiar estados actuales
+  ; Copiar los estados actuales
   ask turtles [
     set estado-siguiente estado
   ]
 
-  ; Contagio de susceptibles
-  ask turtles with [estado = "S"] [
-    if random-float 1 < prob-contagio [
-      set estado-siguiente "I"
-    ]
-  ]
-
-  ; Recuperacion de infectados
+  ; Cada infectado realiza un contacto aleatorio
   ask turtles with [estado = "I"] [
+
+    ; Seleccionar una persona de toda la poblacion
+    let contacto one-of turtles
+
+    ; Contagiar si el contacto es susceptible
+    if [estado] of contacto = "S" [
+
+      if random-float 1 < beta [
+        ask contacto [
+          set estado-siguiente "I"
+        ]
+      ]
+
+    ]
+
+    ; Posibilidad de recuperacion
     if random-float 1 < gamma [
       set estado-siguiente "R"
     ]
+
   ]
 
-  ; Actualizar estados y colores
+  ; Aplicar todos los cambios simultaneamente
   ask turtles [
     set estado estado-siguiente
     actualizar-color
   ]
 
-  ; Avanzar un paso
+  ; Avanzar tiempo
   tick
 
-  ; Guardar resultados
+  ; Registrar resultados
   registrar-resultado
 
-  ; Actualizar las curvas de NetLogo
+  ; Actualizar graficas
   graficar-netlogo
 
 end
