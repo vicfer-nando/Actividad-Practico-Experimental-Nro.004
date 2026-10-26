@@ -1,0 +1,12 @@
+/home/feder/Escritorio/UNL/QUINTO/Simulacion/Practica 4/src/main/java/sir/Main.java
+/home/feder/Escritorio/UNL/QUINTO/Simulacion/Practica 4/src/main/java/sir/controller/ExportadorCSV.java
+/home/feder/Escritorio/UNL/QUINTO/Simulacion/Practica 4/src/main/java/sir/controller/SimulacionController.java
+/home/feder/Escritorio/UNL/QUINTO/Simulacion/Practica 4/src/main/java/sir/model/EstadoSalud.java
+/home/feder/Escritorio/UNL/QUINTO/Simulacion/Practica 4/src/main/java/sir/model/Individuo.java
+/home/feder/Escritorio/UNL/QUINTO/Simulacion/Practica 4/src/main/java/sir/model/ParametrosSimulacion.java
+/home/feder/Escritorio/UNL/QUINTO/Simulacion/Practica 4/src/main/java/sir/model/Poblacion.java
+/home/feder/Escritorio/UNL/QUINTO/Simulacion/Practica 4/src/main/java/sir/model/RegistroPaso.java
+/home/feder/Escritorio/UNL/QUINTO/Simulacion/Practica 4/src/main/java/sir/model/ResultadoSimulacion.java
+/home/feder/Escritorio/UNL/QUINTO/Simulacion/Practica 4/src/main/java/sir/random/GeneradorAleatorio.java
+/home/feder/Escritorio/UNL/QUINTO/Simulacion/Practica 4/src/main/java/sir/random/GeneradorJava.java
+/home/feder/Escritorio/UNL/QUINTO/Simulacion/Practica 4/src/main/java/sir/simulation/MotorSimulacionSIR.java
