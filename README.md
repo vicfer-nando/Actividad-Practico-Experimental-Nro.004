@@ -11,7 +11,7 @@ Implementación en Java de una simulación epidemiológica SIR (Susceptibles-Inf
 - Validaciones de consistencia de la población, transiciones de estado y monotonicidad de S y R.
 - Exportación del historial completo a un archivo CSV.
 - Resumen por consola con estado final, pico de infectados y tiempo de cálculo.
-- Modelo NetLogo equivalente en `netlogo/modelo_sir_netlogo.nlogox.nlogox`.
+- Modelo NetLogo equivalente en `netlogo/modelo_sir_netlogo.nlogox`.
 
 ## Requisitos
 
